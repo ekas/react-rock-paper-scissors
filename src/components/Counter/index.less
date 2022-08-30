@@ -1,0 +1,37 @@
+.counter-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  position: relative;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid @swatch_4;
+  animation: blinkingBackground 2s infinite;
+
+  &-count {
+    padding: 18% 25%;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    background-color: @swatch_4;
+  }
+
+  @keyframes blinkingBackground {
+    0% {
+      background-color: @swatch_4;
+    }
+    25% {
+      background-color: @swatch_9;
+    }
+    50% {
+      background-color: @swatch_4;
+    }
+    75% {
+      background-color: @swatch_9;
+    }
+    100% {
+      background-color: @swatch_4;
+    }
+  }
+}
