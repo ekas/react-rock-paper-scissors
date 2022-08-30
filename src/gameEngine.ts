@@ -16,7 +16,7 @@ export const GameRules: GameRulesType[] = [
     rules: {
       scissors: undefined,
       paper: true,
-      rock: undefined,
+      rock: false,
     },
   },
   {

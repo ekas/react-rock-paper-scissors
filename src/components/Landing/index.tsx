@@ -13,11 +13,17 @@ const Landing = ({ setGameMode }: LandingProps) => {
     <div className="landing">
       <h1 className="landing-heading">Rock Paper Scissors</h1>
       <img src={logo} alt="Logo" className="landing-logo" />
-      <div className="landing-button">
-        <Button onClick={() => setGameMode("player")}>
+      <div className="landing-buttons">
+        <Button
+          onClick={() => setGameMode("player")}
+          className="landing-button"
+        >
           Player vs Computer
         </Button>
-        <Button onClick={() => setGameMode("computer")}>
+        <Button
+          onClick={() => setGameMode("computer")}
+          className="landing-button"
+        >
           Computer vs Computer
         </Button>
       </div>
