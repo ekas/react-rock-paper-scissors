@@ -65,7 +65,7 @@ yarn run test
 ```
 
 ```text
-Note: Do not forget to add pencil.png in `Public` folder. Furthermore, Add rule for pencil in other json Objects
+Note: Do not forget to add pencil.png in `public/images` folder. Furthermore, Add rule for pencil in other json Objects
 
 - `true` if other object beats pencil
 - `false` if other object does notbeats pencil
