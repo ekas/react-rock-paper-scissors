@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { GameObjects, GameObjectsType, GameRules } from "../../gameEngine";
 import { GameAreaComputerStateTpes } from "../../types/Game";
-import Button from "../Button";
 import Counter from "../Counter";
 
 import "./index.less";

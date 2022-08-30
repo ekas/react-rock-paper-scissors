@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GameObjects, GameObjectsType, GameRules } from "../../gameEngine";
 import Button from "../Button";
+import Counter from "../Counter";
 
 import "./index.less";
 
@@ -10,6 +11,7 @@ interface GameAreaProps {
 }
 
 const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
+  const [loader, setLoader] = useState(false);
   const [playerChoice, setPlayerChoice] = useState<GameObjectsType>();
   const [computerChoice, setComputerChoice] = useState<GameObjectsType>();
 
@@ -21,18 +23,10 @@ const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
   }, [isRefreshing]);
 
   useEffect(() => {
-    if (playerChoice !== undefined) {
-      setComputerChoice(pickRandomChoice());
-    }
-  }, [playerChoice]);
-
-  useEffect(() => {
     if (computerChoice !== undefined) {
-      setResult(
-        GameRules.filter((rule) => rule.name === playerChoice)[0].rules[
-          computerChoice
-        ]
-      );
+      const boolVal = GameRules.filter((rule) => rule.name === playerChoice)[0]
+        .rules[computerChoice];
+      setResult(boolVal);
     }
   }, [computerChoice]);
 
@@ -42,9 +36,18 @@ const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
     ] as GameObjectsType;
   };
 
+  const onLoaderComplete = () => {
+    if (playerChoice !== undefined) {
+      setComputerChoice(pickRandomChoice());
+      setLoader(false);
+    }
+  };
+
   const handlePlayerChoice = (choice: GameObjectsType) => {
+    setLoader(true);
     setPlayerChoice(choice);
   };
+
   return (
     <div className="game-area">
       <div className="game-area-left">
@@ -73,6 +76,8 @@ const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
               alt={computerChoice}
             />
           </div>
+        ) : loader ? (
+          <Counter startCount={3} onComplete={onLoaderComplete} />
         ) : (
           <div className="game-area-right-item-text">Choose Your Option</div>
         )}
