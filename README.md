@@ -1,46 +1,101 @@
-# Getting Started with Create React App
+# React Rock PAper Scissors
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project is build using the create-react-app cli and being deployed over [Vercel](https://vercel.com/)
 
-## Available Scripts
+[Demo](https://react-todo-frontend.vercel.app/) is also available
 
-In the project directory, you can run:
+## Project Local Build Instructions
 
-### `yarn start`
+Make sure you've [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [`yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) & [`nodejs`](https://nodejs.org/en/) installed in your system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open terminal and follow these steps;
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Step 1: Clone the repo.
 
-### `yarn test`
+```bash
+git clone https://github.com/ekas/react-todo
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You should now see a `react-todo` folder in your present working directory. Let's change directory to it.
 
-### `yarn build`
+```bash
+cd react-todo/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Step 2: Frontend Build Instructions. Install dependencies.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd frontend/
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will use `yarn` to install project dependencies.
 
-### `yarn eject`
+- Step 3: Start the frontend project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+yarn start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will run a local instance of the application `http://localhost:3000/`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Step 4: BAckend Build Instructions. Install dependencies.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open a new terminal and enter following command.
 
-## Learn More
+```bash
+cd backend/
+yarn install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Step 4: Start the backend project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn start
+```
+
+This will run a local backend instance of the application `http://localhost:4000/`. If you change the backend port don't forget to update the `.env` file in the frontend folder
+
+## Project e2e test Instructions
+
+- Step 1: Restart both frontend and backend servers as per instructions in above sections.
+- Step 2: After that open another terminal.
+
+```bash
+cd frontend/
+yarn run cy:run
+```
+
+- Step 3: For Visual e2e test.
+
+```bash
+cd frontend/
+yarn cypress open
+```
+
+- Step 4: Click on `E2E Testing` and then chose a browser and click on start E2E testing button.
+
+- Step 4: Another chrome will load with list containing tests `todoBoard.cy.js`. Click on it to run tests.
+
+![Img 1](https://github.com/ekas/react-todo/blob/main/screenshots/image1.png)
+
+## Project Features
+
+- Simple Rock Paper Scissors Game app.
+- Choose mode between Player vs Computer or Computer vs Computer.
+
+## Project Screenshots
+
+![Img 2](https://github.com/ekas/react-todo/blob/main/screenshots/image2.png)
+
+![Img 3](https://github.com/ekas/react-todo/blob/main/screenshots/image3.png)
+
+![Img 4](https://github.com/ekas/react-todo/blob/main/screenshots/image4.png)
+
+![Img 5](https://github.com/ekas/react-todo/blob/main/screenshots/image5.png)
+
+![Img 6](https://github.com/ekas/react-todo/blob/main/screenshots/image6.png)
+
+![Img 7](https://github.com/ekas/react-todo/blob/main/screenshots/image7.png)
+
+## Thank You
