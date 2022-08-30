@@ -1,6 +1,9 @@
-export const GameRules = [
+import { GameObjectsType, GameRulesType } from "./types/Game";
+
+export const GameRules: GameRulesType[] = [
   {
     name: "rock",
+    image: "rock.png",
     rules: {
       rock: undefined,
       scissors: true,
@@ -9,6 +12,7 @@ export const GameRules = [
   },
   {
     name: "scissors",
+    image: "scissors.png",
     rules: {
       scissors: undefined,
       paper: true,
@@ -17,6 +21,7 @@ export const GameRules = [
   },
   {
     name: "paper",
+    image: "paper.png",
     rules: {
       paper: undefined,
       scissors: false,
@@ -25,8 +30,20 @@ export const GameRules = [
   },
 ];
 
-export type GameRulesType = typeof GameRules;
+export const getRandomGamesObjectIndex = (): GameObjectsType => {
+  return GameRules[Math.floor(Math.random() * GameRules.length)]
+    .name as GameObjectsType;
+};
 
-export const GameObjects = ["rock", "scissors", "paper"];
-
-export type GameObjectsType = "rock" | "scissors" | "paper" | undefined;
+export const getGameResult = (
+  playerChoice: GameObjectsType,
+  computerChoice: GameObjectsType
+): boolean | undefined => {
+  return (
+    computerChoice &&
+    playerChoice &&
+    GameRules.filter((rule) => rule.name === playerChoice)[0].rules[
+      computerChoice
+    ]
+  );
+};

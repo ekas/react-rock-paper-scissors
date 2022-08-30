@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { GameObjects, GameObjectsType, GameRules } from "../../gameEngine";
-import { GameAreaComputerStateTpes } from "../../types/Game";
+import { getGameResult, getRandomGamesObjectIndex } from "../../gameEngine";
+import { GameAreaComputerStateTpes, GameObjectsType } from "../../types/Game";
 import Counter from "../Counter";
 
 import "./index.less";
@@ -37,25 +37,15 @@ const GameAreaComputer = ({
       choice.computerChoice !== undefined &&
       choice.playerChoice !== undefined
     ) {
-      setResult(
-        GameRules.filter((rule) => rule.name === choice.playerChoice)[0].rules[
-          choice.computerChoice
-        ]
-      );
+      setResult(getGameResult(choice.playerChoice, choice.computerChoice));
     }
   }, [loader]);
-
-  const pickRandomChoice = (): GameObjectsType => {
-    return GameObjects[
-      Math.floor(Math.random() * GameObjects.length)
-    ] as GameObjectsType;
-  };
 
   const handlePlayerChoice = () => {
     setChoice({
       ...choice,
-      playerChoice: pickRandomChoice(),
-      computerChoice: pickRandomChoice(),
+      playerChoice: getRandomGamesObjectIndex(),
+      computerChoice: getRandomGamesObjectIndex(),
     });
   };
 

@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { GameObjects, GameObjectsType, GameRules } from "../../gameEngine";
+import {
+  GameRules,
+  getGameResult,
+  getRandomGamesObjectIndex,
+} from "../../gameEngine";
+import { GameObjectsType } from "../../types/Game";
 import Button from "../Button";
 import Counter from "../Counter";
 
@@ -24,21 +29,13 @@ const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
 
   useEffect(() => {
     if (computerChoice !== undefined) {
-      const boolVal = GameRules.filter((rule) => rule.name === playerChoice)[0]
-        .rules[computerChoice];
-      setResult(boolVal);
+      setResult(getGameResult(playerChoice, computerChoice));
     }
   }, [computerChoice]);
 
-  const pickRandomChoice = (): GameObjectsType => {
-    return GameObjects[
-      Math.floor(Math.random() * GameObjects.length)
-    ] as GameObjectsType;
-  };
-
   const onLoaderComplete = () => {
     if (playerChoice !== undefined) {
-      setComputerChoice(pickRandomChoice());
+      setComputerChoice(getRandomGamesObjectIndex());
       setLoader(false);
     }
   };
@@ -52,13 +49,13 @@ const GameArea = ({ setResult, isRefreshing }: GameAreaProps) => {
     <div className="game-area">
       <div className="game-area-left">
         {playerChoice === undefined ? (
-          GameObjects.map((object, index) => (
+          GameRules.map((rule, index) => (
             <Button
               key={`icon_${index}`}
               className="game-area-left-item"
-              onClick={() => handlePlayerChoice(object as GameObjectsType)}
+              onClick={() => handlePlayerChoice(rule.name as GameObjectsType)}
             >
-              <img src={"images/" + object + ".png"} alt={object} />
+              <img src={"images/" + rule.image} alt={rule.name} />
             </Button>
           ))
         ) : (
