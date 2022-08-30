@@ -3,6 +3,7 @@ import Landing from "./components/Landing";
 import { useEffect, useState } from "react";
 import { GameMode } from "./types/Game";
 import Game from "./components/Game";
+import PageNotFound from "./components/PageNotFound";
 
 import "./App.less";
 
@@ -23,6 +24,10 @@ function App() {
             <Route
               path="game"
               element={<Game mode={gameMode} setGameMode={setGameMode} />}
+            />
+            <Route
+              path="*"
+              element={<PageNotFound setGameMode={setGameMode} />}
             />
           </Route>
         </Routes>
