@@ -1,9 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.less";
 
 function App() {
-  return <div className="App"></div>;
+  <Router>
+    <div className="App">
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<></>} />
+        </Routes>
+      </main>
+    </div>
+  </Router>;
 }
 
 export default App;
