@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import "./index.less";
 import GameArea from "../GameArea";
+import GameAreaComputer from "../GameAreaComputer";
 
 interface GameProps {
   mode: GameMode | undefined;
@@ -56,7 +57,15 @@ const Game = ({ mode, setGameMode }: GameProps) => {
           </h2>
         )}
       </div>
-      <GameArea setResult={handleResultPublish} isRefreshing={isRefreshing} />
+      {mode === "player" ? (
+        <GameArea setResult={handleResultPublish} isRefreshing={isRefreshing} />
+      ) : (
+        <GameAreaComputer
+          setResult={handleResultPublish}
+          isRefreshing={isRefreshing}
+        />
+      )}
+
       {result && <div className="game-result">{result}</div>}
       <Button
         className="game-play-again-btn"
