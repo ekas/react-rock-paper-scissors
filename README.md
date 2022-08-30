@@ -75,12 +75,14 @@ Note: Do not forget to add pencil.png in `Public` folder. Furthermore, Add rule 
 
 ## Project Screenshots
 
-![Img 2](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/image_2.png)
+![Img 1](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/Image_1.png)
 
-![Img 3](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/image_3.png)
+![Img 2](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/Image_2.png)
 
-![Img 4](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/image_4.png)
+![Img 3](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/Image_3.png)
 
-![Img 5](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/image_5.png)
+![Img 4](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/Image_4.png)
+
+![Img 5](https://github.com/ekas/react-rock-paper-scissors/blob/main/screenshots/Image_5.png)
 
 ## Thank You
