@@ -38,6 +38,14 @@ yarn start
 
 This will run a local instance of the application `http://localhost:3000/`
 
+## Project test Instructions
+
+- Step 1: Use following command to run Test cases
+
+```bash
+yarn run test
+```
+
 ## Project Extension
 
 - If you would like to add more Game Objects.
