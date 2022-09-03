@@ -1,7 +1,6 @@
 export const GameRules = [
   {
     name: "rock",
-    image: "rock.png",
     rules: {
       rock: undefined,
       scissors: true,
@@ -10,7 +9,6 @@ export const GameRules = [
   },
   {
     name: "scissors",
-    image: "scissors.png",
     rules: {
       scissors: undefined,
       paper: true,
@@ -19,7 +17,6 @@ export const GameRules = [
   },
   {
     name: "paper",
-    image: "paper.png",
     rules: {
       paper: undefined,
       scissors: false,
