@@ -82,6 +82,6 @@ Note: Add rule for pencil in other json Objects
 
 ![Img 5](screenshots/Image_5.png)
 
-![Img 6](screenshots/Image_5.png)
+![Img 6](screenshots/Image_6.png)
 
 ## Thank You
