@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import figlet from "figlet";
+import gradient from "gradient-string";
 import { getRandomGamesObjectIndex, getGameResult } from "./gameEngine.js";
 import {
   chalkColorMsg,
@@ -26,8 +28,9 @@ export const continuePlay = async (response) => {
   if (response === "Yes") {
     await gamePlay();
   } else {
-    console.log(chalkColorMsg("Thank you for playing the game !!", "blue"));
-    process.exit(1);
+    figlet("Thank you for playing the game !!", function (err, data) {
+      console.log(gradient.pastel.multiline(data));
+    });
   }
 };
 
