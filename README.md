@@ -2,9 +2,9 @@
 
 Project is build using the create-react-app cli and being deployed over [Vercel](https://vercel.com/)
 
-[Demo](https://react-rock-paper-scissors-eight.vercel.app/) is also available
+[Demo - GUI Game](https://react-rock-paper-scissors-eight.vercel.app/) is also available
 
-## Project Local Build Instructions
+## Project Game App Build Instructions
 
 Make sure you've [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git), [`yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable) & [`nodejs`](https://nodejs.org/en/) installed in your system.
 
@@ -16,10 +16,11 @@ Open terminal and follow these steps;
 git clone https://github.com/ekas/react-rock-paper-scissors
 ```
 
-You should now see a `react-todo` folder in your present working directory. Let's change directory to it.
+You should now see a `react-rock-paper-scissors` folder in your present working directory. Let's change directory to it.
 
 ```bash
 cd react-rock-paper-scissors/
+cd GameGUIApp
 ```
 
 - Step 2: Frontend Build Instructions. Install dependencies.
